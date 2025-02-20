@@ -1,11 +1,11 @@
 # IRCTC_APP
 
 ## Overview
-IRCTC_APP is a Java-based ticket booking application designed to streamline the train ticketing process. The application provides an intuitive interface for managing train travel bookings and incorporates modern Java features such as the Stream API and lambda expressions for efficient and concise coding.
+IRCTC_APP is a Java-based ticket booking application designed to streamline the train ticketing process. It provides an intuitive interface for managing train travel bookings while leveraging modern Java features like the Stream API and lambda expressions for efficient coding.
 
 ## Features
 - **Sign Up:** Register a new account.
-- **Login:** Securely authenticate with your credentials.
+- **Login:** Securely authenticate using your credentials.
 - **Fetch Bookings:** Retrieve all your current bookings.
 - **Search Trains:** Find available trains based on your travel criteria.
 - **Book a Seat:** Reserve a seat on a chosen train.
@@ -14,35 +14,33 @@ IRCTC_APP is a Java-based ticket booking application designed to streamline the 
 
 ## Architecture
 
-The application is built using a layered architecture that clearly separates concerns:
-
 ### Entity Layer
 This layer contains the core data models and domain objects:
-- **User:** Captures user details including username, encrypted password, and profile information.
-- **Booking:** Represents ticket booking details such as booking ID, associated user, train details, seat number, and booking status.
-- **Train:** Contains train-related data such as train number, name, available seats, schedule, and route.
+- **User:** Contains user details such as username, encrypted password, and profile information.
+- **Booking:** Represents ticket booking details including booking ID, user association, train information, seat number, and booking status.
+- **Train:** Stores train-related data like train number, name, available seats, schedule, and route.
 
-These entity classes serve as the primary data holders and are serialized/deserialized to and from a local JSON database.
+These classes are responsible for managing and storing data in the local JSON database.
 
 ### Service Layer
-The service layer encapsulates the business logic and interacts with both the presentation and entity layers:
-- **User Management:** Handles user registration, authentication, and password security using JBCrypt.
-- **Booking Management:** Manages operations for fetching, creating, and canceling bookings.
-- **Train Management:** Processes train search queries and retrieves train information.
-- **Data Handling:** Uses Java’s Stream API and lambda functions to efficiently manage and process data from the local JSON database.
+The service layer encapsulates the business logic and connects the presentation layer to the entity layer. Its responsibilities include:
+- **User Management:** Handling registration, authentication, and secure password management using JBCrypt.
+- **Booking Management:** Managing operations such as fetching, creating, and canceling bookings.
+- **Train Management:** Processing train search queries and retrieving train data.
+- **Data Handling:** Utilizing the Java Stream API and lambda functions for efficient data processing and CRUD operations with the local JSON database.
 
 ## Technologies Used
 - **Java:** Core programming language.
-- **Stream API & Lambda Functions:** Employed for efficient data processing.
-- **IntelliJ IDEA:** Integrated Development Environment (IDE) for development.
+- **Stream API & Lambda Functions:** For concise and efficient data processing.
+- **IntelliJ IDEA:** Primary Integrated Development Environment.
 - **Gradle:** Build automation tool for dependency management and project building.
 
 ## Database
-- **Local DB (JSON File):** The application uses a JSON file to store and manage data locally.
+- **Local DB (JSON File):** Data is stored and managed locally using a JSON file.
 
 ## Tools
-- **IntelliJ IDEA:** Primary IDE for development.
-- **Gradle:** Tool for building and managing project dependencies.
+- **IntelliJ IDEA:** The main IDE used for developing the application.
+- **Gradle:** Used for building the project and managing dependencies.
 
 ## Installation
 
@@ -56,32 +54,32 @@ Open the Project in IntelliJ IDEA:
 Launch IntelliJ IDEA.
 Click on Open and select the cloned repository folder.
 Import the Gradle Project:
-IntelliJ IDEA will detect the Gradle configuration automatically.
+IntelliJ IDEA should automatically detect the Gradle configuration.
 Import the project as a Gradle project to resolve all dependencies.
 Build the Project:
 Open the Gradle tool window in IntelliJ IDEA.
 Run the build task to compile the project.
 Run the Application:
-Locate the main class (with the public static void main(String[] args) method).
+Locate the main class (the one with the public static void main(String[] args) method).
 Right-click the file and select Run, or execute the Gradle run task if configured.
 Usage Instructions
-Once the application is running, you can navigate through its features:
+After launching the application, use the following guidelines to navigate through its features:
 
 Sign Up / Login:
-Begin by creating a new account using the sign-up feature.
-Once registered, log in using your credentials.
+Start by creating a new account via the sign-up feature.
+Once registered, log in with your credentials.
 Fetching Bookings:
 After logging in, select the "Fetch Bookings" option to view your current bookings.
 Searching for Trains:
-Use the "Search Trains" feature to find available trains based on your desired criteria.
+Use the "Search Trains" option to look for available trains that meet your travel criteria.
 Booking a Seat:
-When a suitable train is found, use the "Book a Seat" feature to reserve your seat.
+When you identify a suitable train, use the "Book a Seat" feature to reserve a seat.
 Canceling a Booking:
-If needed, cancel an existing booking by selecting the "Cancel Booking" option.
+To cancel a booking, select the "Cancel Booking" option.
 Exiting the App:
 Use the "Exit the App" option to safely close the application.
 Dependencies & Libraries
-This project uses several external libraries to enhance functionality and ensure security:
+This project leverages several external libraries to enhance functionality and ensure security:
 
 Guava: Provides additional utilities and collections.
 Jackson Databind (2.12.6): Facilitates JSON serialization and deserialization.
